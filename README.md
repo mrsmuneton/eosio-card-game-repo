@@ -32,12 +32,7 @@ The above command will execute the following in sequence:
 2. `start_eosio_blockchain.sh`
 3. `start_frontend.sh`
 
-- Login with the following credentials:
-
-**To stop**, press `ctrl+c` on your keyboard, and execute:
-```sh
-docker stop eosio_cardgame_container
-```
+- Login with the credentials provided at top
 
 ## Detailed guide
 
