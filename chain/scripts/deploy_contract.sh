@@ -13,7 +13,7 @@ mkdir -p ./compiled_contracts/$1
 COMPILEDCONTRACTSPATH="$( pwd -P )/compiled_contracts"
 
 # unlock the wallet, ignore error if already unlocked
-if [ ! -z $3 ]; then cleos wallet unlock -n $3 --password $4 || true; fi
+if [ ! -z $3 ]; then nodeos wallet unlock -n $3 --password $4 || true; fi
 
 # compile smart contract to wasm and abi files using EOSIO.CDT (Contract Development Toolkit)
 # https://github.com/EOSIO/eosio.cdt
@@ -22,4 +22,4 @@ if [ ! -z $3 ]; then cleos wallet unlock -n $3 --password $4 || true; fi
 ) &&
 
 # set (deploy) compiled contract to blockchain
-cleos set contract $2 "$COMPILEDCONTRACTSPATH/$1/" --permission $2
+nodeos set contract $2 "$COMPILEDCONTRACTSPATH/$1/" --permission $2
